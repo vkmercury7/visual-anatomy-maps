@@ -24,7 +24,7 @@ export function MapStack({
   className?: string;
   priority?: boolean;
 }) {
-  const [front, mid, back] = MAPS;
+  const [front, mid, back] = MAPS as [(typeof MAPS)[number], (typeof MAPS)[number], (typeof MAPS)[number], ...(typeof MAPS)[number][]];
 
   return (
     <div className={cn("relative mx-auto w-full max-w-[21rem] sm:max-w-[27rem]", className)}>
