@@ -3,9 +3,9 @@ import { Heart, MoveHorizontal } from "lucide-react";
 import { Reveal } from "./reveal";
 import { cn } from "@/lib/utils";
 
-function PanelTradicional() {
+function PanelTradicional({ split = false }: { split?: boolean }) {
   return (
-    <div className="h-full bg-secondary/60 p-6 sm:p-8">
+    <div className={cn("h-full bg-secondary/60 p-6 sm:p-8", split && "pr-[52%]")}>
       <span className="text-[0.6rem] font-bold tracking-[0.2em] text-muted-foreground">
         CONTEÚDO TRADICIONAL
       </span>
@@ -28,9 +28,9 @@ function PanelTradicional() {
   );
 }
 
-function PanelMapa() {
+function PanelMapa({ split = false }: { split?: boolean }) {
   return (
-    <div className="h-full bg-card p-6 sm:p-8">
+    <div className={cn("h-full bg-card p-6 sm:p-8", split && "pl-[52%]")}>
       <span className="text-[0.6rem] font-bold tracking-[0.2em] text-primary">MAPA VISUAL</span>
       <h3 className="mt-3 text-sm font-bold text-ink">Coração — estrutura organizada</h3>
 
@@ -118,14 +118,14 @@ export function Comparador() {
 
         {/* Desktop: comparador deslizante */}
         <Reveal className="mt-12 hidden md:block">
-          <div className="relative select-none overflow-hidden rounded-3xl border border-border shadow-[var(--shadow-card)]">
-            <PanelTradicional />
+          <div className="relative min-h-[28rem] select-none overflow-hidden rounded-3xl border border-border shadow-[var(--shadow-card)]">
+            <PanelTradicional split />
             <div
               className="absolute inset-0"
               style={{ clipPath: `inset(0 0 0 ${pos}%)` }}
               aria-hidden
             >
-              <PanelMapa />
+              <PanelMapa split />
             </div>
             <div
               className="pointer-events-none absolute inset-y-0 w-px bg-primary/70"
