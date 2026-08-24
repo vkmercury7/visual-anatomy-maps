@@ -5,7 +5,8 @@ import { cn } from "@/lib/utils";
 
 function PanelTradicional({ split = false }: { split?: boolean }) {
   return (
-    <div className={cn("h-full bg-secondary/60 p-6 sm:p-8", split && "pr-[52%]")}>
+    <div className="h-full bg-secondary/60">
+      <div className={cn("p-6 sm:p-8", split && "w-[52%]")}>
       <span className="text-[0.6rem] font-bold tracking-[0.2em] text-muted-foreground">
         CONTEÚDO TRADICIONAL
       </span>
@@ -24,13 +25,15 @@ function PanelTradicional({ split = false }: { split?: boolean }) {
         Informação espalhada em vários parágrafos, difícil de localizar rapidamente durante a
         revisão.
       </p>
+      </div>
     </div>
   );
 }
 
 function PanelMapa({ split = false }: { split?: boolean }) {
   return (
-    <div className={cn("h-full bg-card p-6 sm:p-8", split && "pl-[52%]")}>
+    <div className={cn("h-full bg-card", split && "flex justify-end")}>
+      <div className={cn("p-6 sm:p-8", split && "w-[48%]")}>
       <span className="text-[0.6rem] font-bold tracking-[0.2em] text-primary">MAPA VISUAL</span>
       <h3 className="mt-3 text-sm font-bold text-ink">Coração — estrutura organizada</h3>
 
@@ -60,6 +63,7 @@ function PanelMapa({ split = false }: { split?: boolean }) {
             <span className="mt-1.5 block h-1 w-2/3 rounded-full bg-primary/25" aria-hidden />
           </div>
         ))}
+      </div>
       </div>
     </div>
   );
