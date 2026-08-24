@@ -1,5 +1,5 @@
-import mapa1 from "@/assets/mapa-1.jpg";
-import mapa2 from "@/assets/mapa-2.jpg";
+import mapa1 from "@/assets/mapa-coracao.jpg";
+import mapa2 from "@/assets/mapa-digestorio.jpg";
 import mapa3 from "@/assets/mapa-3.jpg";
 import mapaCerebro from "@/assets/mapa-cerebro.jpg";
 import mapaPulmoes from "@/assets/mapa-pulmoes.jpg";

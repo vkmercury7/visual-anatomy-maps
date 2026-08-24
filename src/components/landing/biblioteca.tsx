@@ -4,7 +4,7 @@ import { Reveal } from "./reveal";
 import mapaCerebro from "@/assets/mapa-cerebro.jpg";
 import mapaPulmoes from "@/assets/mapa-pulmoes.jpg";
 import mapaEsqueleto from "@/assets/mapa-esqueleto.jpg";
-import mapa1 from "@/assets/mapa-1.jpg";
+import mapa1 from "@/assets/mapa-coracao.jpg";
 
 /** Demonstração visual da organização do produto (não é uma busca real). */
 const CONSULTAS = [
