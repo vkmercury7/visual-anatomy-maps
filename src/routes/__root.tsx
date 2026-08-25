@@ -122,12 +122,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "text/javascript",
         children: `
           (function() {
-            var img = document.createElement('img');
-            img.height = 1;
-            img.width = 1;
-            img.style.display = 'none';
-            img.src = 'https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1';
-            document.body.appendChild(img);
+            function addPixelImg() {
+              if (!document.body) return;
+              var img = document.createElement('img');
+              img.height = 1;
+              img.width = 1;
+              img.style.display = 'none';
+              img.alt = '';
+              img.src = 'https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1';
+              document.body.appendChild(img);
+            }
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', addPixelImg);
+            } else {
+              addPixelImg();
+            }
           })();
         `,
       },
